@@ -14,4 +14,5 @@ setup(
     version='0.1',
      # The license can be anything you like
     license='Liam_Nayeri',
-    description='personal take on Idzorek Black Litterman'
+    description='personal take on Idzorek Black Litterman', 
+)
