@@ -20,7 +20,7 @@ setup(
     author='Siamak Nayeri',
     author_email='siamaknayeri@gmail.com',
     # Needed to actually package something
-    packages=['IBL'],
+    packages=find_packages(),
     ext_modules=extensions,
     package_dir={"IBL": "./IBL"},
     include_package_data=False,
