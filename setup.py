@@ -1,15 +1,17 @@
 from setuptools import find_packages,setup
+import fnmatch
+import os
 
 package_data = defaultdict(list)
 filetypes = ["*.csv", "*.csv.gz"]
-for root, _, filenames in os.walk(os.path.join(os.getcwd(), "arch")):  # noqa: E501
+for root, _, filenames in os.walk(os.path.join(os.getcwd(), "IBL")):  # noqa: E501
     matches = []
     for filetype in filetypes:
         for filename in fnmatch.filter(filenames, filetype):
             matches.append(filename)
     if matches:
         package_data[".".join(os.path.relpath(root).split(os.path.sep))] = filetypes
-package_data["arch"].append("py.typed")
+package_data["IBL"].append("py.typed")
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
