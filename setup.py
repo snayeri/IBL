@@ -1,5 +1,16 @@
 from setuptools import find_packages,setup
 
+package_data = defaultdict(list)
+filetypes = ["*.csv", "*.csv.gz"]
+for root, _, filenames in os.walk(os.path.join(os.getcwd(), "arch")):  # noqa: E501
+    matches = []
+    for filetype in filetypes:
+        for filename in fnmatch.filter(filenames, filetype):
+            matches.append(filename)
+    if matches:
+        package_data[".".join(os.path.relpath(root).split(os.path.sep))] = filetypes
+package_data["arch"].append("py.typed")
+
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
     name='IBL',
@@ -8,6 +19,7 @@ setup(
     author_email='siamaknayeri@gmail.com',
     # Needed to actually package something
     packages=['IBL'],
+    package_data=package_data,
     # Needed for dependencies
     install_requires=['numpy', 'pandas', 'pandas_datareader', 'scipy'],
     # *strongly* suggested for sharing
