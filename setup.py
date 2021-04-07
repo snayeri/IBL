@@ -16,7 +16,7 @@ package_data["IBL"].append("py.typed")
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
     name='IBL',
-    url='https://github.com/snayeri/Idzorek_Black_Litterman',
+    url='https://github.com/snayeri/IBL',
     author='Siamak Nayeri',
     author_email='siamaknayeri@gmail.com',
     # Needed to actually package something
