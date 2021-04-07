@@ -22,7 +22,6 @@ setup(
     author_email='siamaknayeri@gmail.com',
     # Needed to actually package something
     packages=find_packages(),
-    ext_modules=extensions,
     package_dir={"IBL": "./IBL"},
     zip_safe=False,
     include_package_data=False,
