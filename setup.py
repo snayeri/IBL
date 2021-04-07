@@ -1,10 +1,11 @@
 from setuptools import find_packages,setup
 import fnmatch
 import os
+from collections import defaultdict
 
 package_data = defaultdict(list)
 filetypes = ["*.csv", "*.csv.gz"]
-for root, _, filenames in os.walk(os.path.join(os.getcwd(), "IBL")):  # noqa: E501
+for root, _, filenames in os.walk(os.path.join(os.getcwd(), "IBL")):  
     matches = []
     for filetype in filetypes:
         for filename in fnmatch.filter(filenames, filetype):
@@ -23,6 +24,7 @@ setup(
     packages=find_packages(),
     ext_modules=extensions,
     package_dir={"IBL": "./IBL"},
+    zip_safe=False,
     include_package_data=False,
     package_data=package_data,
     # Needed for dependencies
