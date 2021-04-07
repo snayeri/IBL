@@ -21,6 +21,9 @@ setup(
     author_email='siamaknayeri@gmail.com',
     # Needed to actually package something
     packages=['IBL'],
+    ext_modules=extensions,
+    package_dir={"IBL": "./IBL"},
+    include_package_data=False,
     package_data=package_data,
     # Needed for dependencies
     install_requires=['numpy', 'pandas', 'pandas_datareader', 'scipy'],
