@@ -33,7 +33,7 @@ class Idzorek_BL(portfolio):
         self.tickers = assets_prices.columns.values
         self.mkt_w = market_caps.astype(float)/market_caps.sum()
         self.mkt_r = market_prices.apply(lambda x: np.log(x/x.shift(1))).resample('m').sum()
-        self.rf = monthly_risk_free
+        self.rf = monthly_risk_free.iloc[:,0]
         self.tau = tau
         self.sigma = self.excess_r().cov()
         self.mkt_var = self.mkt_w.transpose().dot(self.sigma).dot(self.mkt_w)
