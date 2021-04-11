@@ -26,5 +26,5 @@ def load_file(file_base: str, filename: str) -> DataFrame:
             data[col] = pd.to_numeric(data[col], errors="coerce")
     else:
         data = data.set_index(data.iloc[:,0])
-        data.iloc[:,1] = pd.to_numeric(data.iloc[:,1])
+        data = pd.to_numeric(data.iloc[:,1])
     return data
