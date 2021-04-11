@@ -22,6 +22,9 @@ def load_file(file_base: str, filename: str) -> DataFrame:
     if "Date" in data:
         data.Date = pd.to_datetime(data.Date)
         data = data.set_index("Date")
-    for col in data:
-        data[col] = pd.to_numeric(data[col], errors="coerce")
+        for col in data:
+            data[col] = pd.to_numeric(data[col], errors="coerce")
+    else:
+        data = data.set_index(data.iloc[:,0])
+        data.iloc[:,1] = pd.to_numeric(data.iloc[:,1])
     return data
