@@ -23,7 +23,7 @@ class portfolio:
         return self.returns.cov()
 
 # create the Idzorek approach to Black Litterman model
-class Idzorek_BL(portfolio):
+class IBL_model(portfolio):
     """
     utilizes Thomas Idzorek's 2004 approach in "step by step guide to the black litterman model:"
     https://www.sciencedirect.com/science/article/pii/B9780750683210500030 
