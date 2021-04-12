@@ -81,7 +81,7 @@ class Idzorek_BL(portfolio):
             a4 = a3 + rho_v*(que/omega_hat)
             w_k = a0.dot(a2).dot(a4)
             return ((w_c-w_k)**2).sum()
-        return opt.fmin(fun,0.01,disp=1)[0]
+        return opt.fmin(fun,0.01,disp=0)[0]
     
     def views_expected_r(self,Q,P,C):
         """
